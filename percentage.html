@@ -1,1 +1,456 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Percentage Calculator | FreeToolsHub</title><meta name="description" content="Calculate a percentage of a number, find what percentage one number is of another, or calculate percentage change."><meta name="robots" content="index,follow"><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css"></head><body><header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a><nav><a href="index.html">Home</a><a href="index.html#calculators">Calculators</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header><main><section class="hero"><h1>Percentage Calculator</h1><p>Calculate percentages in three common ways.</p><div class="toolbox"><label for="mode">Calculation type</label><select id="mode" onchange="setup()"><option value="of">What is X% of Y?</option><option value="is">X is what % of Y?</option><option value="change">Percentage change from X to Y</option></select><div id="fields"></div><button onclick="calculate()">Calculate</button><button onclick="setup()">Reset</button><p id="out"></p><small id="formula"></small></div></section></main><footer>© 2026 FreeToolsHub · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></footer><script>function setup(){let m=mode.value;fields.innerHTML=m==='of'?'<input id="a" type="number" step="any" placeholder="Percentage (X)"><input id="b" type="number" step="any" placeholder="Number (Y)">':m==='is'?'<input id="a" type="number" step="any" placeholder="X (part)"><input id="b" type="number" step="any" placeholder="Y (whole)">':'<input id="a" type="number" step="any" placeholder="Starting value (X)"><input id="b" type="number" step="any" placeholder="New value (Y)">';out.textContent='';formula.textContent=''}function calculate(){let x=Number(a.value),y=Number(b.value);if(!a.value||!b.value){out.textContent='Please enter both numbers.';return}let r;if(mode.value==='of'){r=x*y/100;out.textContent=r.toLocaleString(undefined,{maximumFractionDigits:10});formula.textContent=x+'% × '+y+' = '+r}else if(mode.value==='is'){if(y===0){out.textContent='Y cannot be zero.';return}r=x/y*100;out.textContent=r.toFixed(2)+'%';formula.textContent=x+' ÷ '+y+' × 100 = '+r.toFixed(2)+'%'}else{if(x===0){out.textContent='Starting value cannot be zero.';return}r=(y-x)/Math.abs(x)*100;out.textContent=r.toFixed(2)+'%';formula.textContent='('+y+' − '+x+') ÷ |'+x+'| × 100 = '+r.toFixed(2)+'%'}}setup();</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Percentage Calculator - FreeToolsHub</title>
+
+  <meta name="description" content="Free percentage calculator for finding percentages, calculating what percent one number is of another, and percentage change.">
+  <meta name="robots" content="index,follow">
+
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .calculator {
+      max-width: 650px;
+      margin: 30px auto;
+    }
+
+    .mode-box {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .mode-box button {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #26344a;
+      border-radius: 10px;
+      background: #101827;
+      color: #fff;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .mode-box button.active {
+      border-color: #3b82f6;
+      background: #17243a;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 600;
+    }
+
+    .field input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px;
+      border-radius: 9px;
+      border: 1px solid #334155;
+      background: #0b1220;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .buttons button {
+      flex: 1;
+      min-width: 130px;
+      padding: 13px;
+      border: 0;
+      border-radius: 9px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .calculate-btn {
+      background: #3b82f6;
+      color: white;
+    }
+
+    .reset-btn {
+      background: #26344a;
+      color: white;
+    }
+
+    .result {
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: 10px;
+      background: #101827;
+      border: 1px solid #26344a;
+      display: none;
+    }
+
+    .result strong {
+      font-size: 24px;
+      display: block;
+      margin: 8px 0;
+    }
+
+    .copy-btn {
+      margin-top: 10px;
+      padding: 9px 14px;
+      border: 0;
+      border-radius: 7px;
+      background: #22d3ee;
+      color: #071018;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .error {
+      color: #ff8a8a;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .explanation {
+      max-width: 650px;
+      margin: 35px auto;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">Free<span>Tools</span>Hub</a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1>Percentage Calculator</h1>
+
+    <p>
+      Calculate percentages, find what percentage one number is of another,
+      and calculate percentage change.
+    </p>
+  </section>
+
+  <section class="calculator">
+
+    <div class="mode-box">
+
+      <button class="mode active" data-mode="of">
+        <strong>1. What is X% of Y?</strong><br>
+        Example: 20% of 850
+      </button>
+
+      <button class="mode" data-mode="what">
+        <strong>2. X is what % of Y?</strong><br>
+        Example: 495 is what % of 850?
+      </button>
+
+      <button class="mode" data-mode="change">
+        <strong>3. Percentage Change</strong><br>
+        Example: Change from 850 to 495
+      </button>
+
+    </div>
+
+    <div id="inputs">
+
+      <div class="field">
+        <label id="label1">Percentage (%)</label>
+        <input id="number1" type="number" step="any" placeholder="Enter percentage">
+      </div>
+
+      <div class="field">
+        <label id="label2">Number</label>
+        <input id="number2" type="number" step="any" placeholder="Enter number">
+      </div>
+
+    </div>
+
+    <p id="error" class="error"></p>
+
+    <div class="buttons">
+      <button class="calculate-btn" onclick="calculate()">Calculate</button>
+      <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+    </div>
+
+    <div id="result" class="result">
+      <div>Result:</div>
+      <strong id="resultValue"></strong>
+      <div id="resultText"></div>
+
+      <button class="copy-btn" onclick="copyResult()">
+        Copy Result
+      </button>
+    </div>
+
+  </section>
+
+  <section class="explanation">
+
+    <h2>How to use the Percentage Calculator</h2>
+
+    <h3>What is X% of Y?</h3>
+    <p>
+      Enter the percentage and the number. For example,
+      20% of 850 gives <strong>170</strong>.
+    </p>
+
+    <h3>X is what % of Y?</h3>
+    <p>
+      Enter the first number and the total number.
+      For example, 495 is what percentage of 850?
+      The answer is <strong>58.24%</strong>.
+    </p>
+
+    <h3>Percentage Change</h3>
+    <p>
+      Enter the original value and the new value.
+      The calculator will show the percentage increase or decrease.
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  © 2026 FreeToolsHub ·
+  <a href="privacy.html">Privacy</a> ·
+  <a href="terms.html">Terms</a> ·
+  <a href="disclaimer.html">Disclaimer</a>
+</footer>
+
+<script>
+
+let mode = "of";
+
+const modes = document.querySelectorAll(".mode");
+
+modes.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    modes.forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    mode = button.dataset.mode;
+
+    updateFields();
+
+    hideResult();
+
+  });
+
+});
+
+
+function updateFields() {
+
+  const label1 = document.getElementById("label1");
+  const label2 = document.getElementById("label2");
+
+  const input1 = document.getElementById("number1");
+  const input2 = document.getElementById("number2");
+
+  if (mode === "of") {
+
+    label1.textContent = "Percentage (%)";
+    label2.textContent = "Number";
+
+    input1.placeholder = "Example: 20";
+    input2.placeholder = "Example: 850";
+
+  }
+
+  else if (mode === "what") {
+
+    label1.textContent = "First Number";
+    label2.textContent = "Total Number";
+
+    input1.placeholder = "Example: 495";
+    input2.placeholder = "Example: 850";
+
+  }
+
+  else if (mode === "change") {
+
+    label1.textContent = "Original Value";
+    label2.textContent = "New Value";
+
+    input1.placeholder = "Example: 850";
+    input2.placeholder = "Example: 495";
+
+  }
+
+}
+
+
+function calculate() {
+
+  const a = parseFloat(document.getElementById("number1").value);
+  const b = parseFloat(document.getElementById("number2").value);
+
+  const error = document.getElementById("error");
+
+  error.style.display = "none";
+
+  if (isNaN(a) || isNaN(b)) {
+
+    showError("Please enter both numbers.");
+
+    return;
+
+  }
+
+  let result;
+  let text;
+
+  if (mode === "of") {
+
+    result = (a / 100) * b;
+
+    text = a + "% of " + b + " = " + formatNumber(result);
+
+  }
+
+  else if (mode === "what") {
+
+    if (b === 0) {
+
+      showError("The total number cannot be zero.");
+
+      return;
+
+    }
+
+    result = (a / b) * 100;
+
+    text = a + " is " + formatNumber(result) + "% of " + b;
+
+  }
+
+  else if (mode === "change") {
+
+    if (a === 0) {
+
+      showError("The original value cannot be zero.");
+
+      return;
+
+    }
+
+    result = ((b - a) / Math.abs(a)) * 100;
+
+    if (result > 0) {
+
+      text = "Increase of " + formatNumber(result) + "%";
+
+    } else if (result < 0) {
+
+      text = "Decrease of " + formatNumber(Math.abs(result)) + "%";
+
+    } else {
+
+      text = "No percentage change";
+
+    }
+
+  }
+
+  document.getElementById("resultValue").textContent =
+    formatNumber(result) + "%";
+
+  document.getElementById("resultText").textContent = text;
+
+  document.getElementById("result").style.display = "block";
+
+}
+
+
+function formatNumber(number) {
+
+  return Number(number.toFixed(2)).toLocaleString();
+
+}
+
+
+function showError(message) {
+
+  const error = document.getElementById("error");
+
+  error.textContent = message;
+
+  error.style.display = "block";
+
+  hideResult();
+
+}
+
+
+function hideResult() {
+
+  document.getElementById("result").style.display = "none";
+
+}
+
+
+function resetCalculator() {
+
+  document.getElementById("number1").value = "";
+
+  document.getElementById("number2").value = "";
+
+  document.getElementById("error").style.display = "none";
+
+  hideResult();
+
+}
+
+
+function copyResult() {
+
+  const value = document.getElementById("resultValue").textContent;
+  const text = document.getElementById("resultText").textContent;
+
+  navigator.clipboard.writeText(text + " — " + value)
+    .then(() => {
+
+      const button = document.querySelector(".copy-btn");
+
+      button.textContent = "Copied!";
+
+      setTimeout(() => {
+
+        button.textContent = "Copy Result";
+
+      }, 1500);
+
+    });
+
+}
+
+</script>
+
+</body>
+    </html>
