@@ -1,7 +1,8 @@
 # FreeToolsHub
-Static free-tools website designed for GitHub Pages.
 
-## Deploy
-Upload this folder to a GitHub repository, then enable Settings → Pages → Deploy from branch → main → /(root).
+Free online calculators, text utilities, developer tools and generators.
 
-The included tools are browser-based except the QR generator, which currently calls a third-party QR API.
+## GitHub Pages
+All files are intentionally kept in the repository root so GitHub Pages works without subfolder path issues.
+
+Enable Settings → Pages → Deploy from branch → main → /(root).
