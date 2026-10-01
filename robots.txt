@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://zaintechmart.github.io/FreeToolsHub/sitemap.xml
