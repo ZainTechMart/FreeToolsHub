@@ -1,1 +1,33 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Random Number Generator | FreeToolsHub</title><meta name="robots" content="index,follow"><meta name="description" content="Generate a random number in a range."><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css"></head><body><header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a></header><main><section class="hero"><h1>Random Number Generator</h1><p>Generate a random number in a range.</p><div class="toolbox"><input id="a" type="number" placeholder="Min"><input id="b" type="number" placeholder="Max"><button onclick="go()">Generate</button><p id="out"></p></div></section></main><footer>© 2026 FreeToolsHub · <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer><script>function go(){let x=+a.value,y=+b.value;out.textContent=Math.floor(Math.random()*(y-x+1))+x}</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Random Number Generator | FreeToolsHub</title>
+<meta name="description" content="Generate a random integer between a minimum and maximum value.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zaintechmart.github.io/FreeToolsHub/random.html">
+<meta property="og:title" content="Random Number Generator | FreeToolsHub">
+<meta property="og:description" content="Generate a random integer between a minimum and maximum value.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zaintechmart.github.io/FreeToolsHub/random.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Random Number Generator - FreeToolsHub","url":"https://zaintechmart.github.io/FreeToolsHub/random.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+<header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
+<section class="hero"><p class="badge">Free generator</p><h1>Random Number Generator</h1><p>Generate a random whole number within a range.</p><div class="toolbox"><label for="a">Minimum</label><input id="a" type="number" placeholder="Example: 1"><label for="b">Maximum</label><input id="b" type="number" placeholder="Example: 100"><div class="tool-actions"><button onclick="go()">Generate</button><button type="button" class="secondary" onclick="resetTool()">Reset</button></div><p id="out" class="result" aria-live="polite"></p></div></section><section class="tool-info">
+<h2>About Random Number Generator</h2>
+<p>Generate a random whole number within the range you enter.</p>
+<h2>How to use</h2>
+<p>Enter minimum and maximum values, then select Generate.</p>
+<h2>How it works</h2>
+<p>The result is an integer from the minimum through the maximum, inclusive.</p>
+<p><a href="percentage.html">Try Percentage Calculator</a> · <a href="index.html">View all FreeToolsHub tools</a></p>
+</section>
+<footer>© 2026 FreeToolsHub · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer>
+<script>function go(){const x=Number(a.value),y=Number(b.value);if(!Number.isInteger(x)||!Number.isInteger(y)||x>y){out.textContent='Enter integer minimum and maximum values, with minimum ≤ maximum.';return}out.textContent=String(Math.floor(Math.random()*(y-x+1))+x)}function resetTool(){a.value='';b.value='';out.textContent=''}</script>
+</body>
+</html>

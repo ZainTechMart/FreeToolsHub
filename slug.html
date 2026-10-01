@@ -1,1 +1,33 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Slug Generator | FreeToolsHub</title><meta name="robots" content="index,follow"><meta name="description" content="Create a URL-friendly slug."><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css"></head><body><header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a></header><main><section class="hero"><h1>Slug Generator</h1><p>Create a URL-friendly slug.</p><div class="toolbox"><input id="t" placeholder="Your title"><button onclick="go()">Generate</button><p id="out"></p></div></section></main><footer>© 2026 FreeToolsHub · <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer><script>function go(){out.textContent=t.value.toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Slug Generator | FreeToolsHub</title>
+<meta name="description" content="Create clean, URL-friendly slugs from titles and phrases.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zaintechmart.github.io/FreeToolsHub/slug.html">
+<meta property="og:title" content="Slug Generator | FreeToolsHub">
+<meta property="og:description" content="Create clean, URL-friendly slugs from titles and phrases.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zaintechmart.github.io/FreeToolsHub/slug.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Slug Generator - FreeToolsHub","url":"https://zaintechmart.github.io/FreeToolsHub/slug.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+<header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
+<section class="hero"><p class="badge">Free text tool</p><h1>Slug Generator</h1><p>Create a simple URL-friendly slug from a title.</p><div class="toolbox"><label for="t">Title</label><input id="t" placeholder="Example: My New Blog Post"><div class="tool-actions"><button onclick="go()">Generate Slug</button><button type="button" class="secondary" onclick="resetTool()">Reset</button></div><p id="out" class="result" aria-live="polite"></p></div></section><section class="tool-info">
+<h2>About Slug Generator</h2>
+<p>Turn a title into a simple lowercase URL slug.</p>
+<h2>How to use</h2>
+<p>Enter a title and select Generate.</p>
+<h2>How it works</h2>
+<p>The generator converts text to lowercase, replaces non-alphanumeric runs with hyphens, and removes leading or trailing hyphens.</p>
+<p><a href="url.html">Try URL Encoder / Decoder</a> · <a href="index.html">View all FreeToolsHub tools</a></p>
+</section>
+<footer>© 2026 FreeToolsHub · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer>
+<script>function go(){out.textContent=t.value.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'Please enter a title.'}function resetTool(){t.value='';out.textContent=''}</script>
+</body>
+</html>

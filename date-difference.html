@@ -1,1 +1,33 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Date Difference | FreeToolsHub</title><meta name="robots" content="index,follow"><meta name="description" content="Calculate days between two dates."><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css"></head><body><header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a></header><main><section class="hero"><h1>Date Difference</h1><p>Calculate days between two dates.</p><div class="toolbox"><input id="a" type="date"><input id="b" type="date"><button onclick="go()">Calculate</button><p id="out"></p></div></section></main><footer>© 2026 FreeToolsHub · <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer><script>function go(){let x=new Date(a.value),y=new Date(b.value);out.textContent="Difference: "+Math.abs(Math.round((y-x)/86400000))+" days"}</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Date Difference Calculator | FreeToolsHub</title>
+<meta name="description" content="Calculate the number of days between two dates with a free online date difference calculator.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zaintechmart.github.io/FreeToolsHub/date-difference.html">
+<meta property="og:title" content="Date Difference Calculator | FreeToolsHub">
+<meta property="og:description" content="Calculate the number of days between two dates with a free online date difference calculator.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zaintechmart.github.io/FreeToolsHub/date-difference.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Date Difference Calculator - FreeToolsHub","url":"https://zaintechmart.github.io/FreeToolsHub/date-difference.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+<header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
+<section class="hero"><p class="badge">Free online calculator</p><h1>Date Difference Calculator</h1><p>Find the number of days between two dates.</p><div class="toolbox"><label for="a">Start date</label><input id="a" type="date"><label for="b">End date</label><input id="b" type="date"><div class="tool-actions"><button onclick="go()">Calculate</button><button type="button" class="secondary" onclick="resetTool()">Reset</button></div><p id="out" class="result" aria-live="polite"></p></div></section><section class="tool-info">
+<h2>About Date Difference Calculator</h2>
+<p>Find the absolute number of calendar days between two dates.</p>
+<h2>How to use</h2>
+<p>Choose both dates and select Calculate.</p>
+<h2>How it works</h2>
+<p>The tool compares the two dates and returns the absolute difference in days.</p>
+<p><a href="age-calculator.html">Try Age Calculator</a> · <a href="index.html">View all FreeToolsHub tools</a></p>
+</section>
+<footer>© 2026 FreeToolsHub · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer>
+<script>function go(){if(!a.value||!b.value){out.textContent='Please select both dates.';return}const x=new Date(a.value+'T00:00:00'),y=new Date(b.value+'T00:00:00');out.textContent='Difference: '+Math.abs(Math.round((y-x)/86400000))+' days'}function resetTool(){a.value='';b.value='';out.textContent=''}</script>
+</body>
+</html>

@@ -1,1 +1,33 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Word Counter | FreeToolsHub</title><meta name="robots" content="index,follow"><meta name="description" content="Count words and characters."><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css"></head><body><header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a></header><main><section class="hero"><h1>Word Counter</h1><p>Count words and characters.</p><div class="toolbox"><textarea id="t" rows="10" placeholder="Type or paste text"></textarea><p id="out"></p></div></section></main><footer>© 2026 FreeToolsHub · <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer><script>t.oninput=()=>{let s=t.value;out.textContent=`Words: ${(s.trim().match(/\\S+/g)||[]).length} | Characters: ${s.length}`} </script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Word Counter | FreeToolsHub</title>
+<meta name="description" content="Count words and characters in text with a fast free online word counter.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zaintechmart.github.io/FreeToolsHub/word-counter.html">
+<meta property="og:title" content="Word Counter | FreeToolsHub">
+<meta property="og:description" content="Count words and characters in text with a fast free online word counter.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zaintechmart.github.io/FreeToolsHub/word-counter.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Word Counter - FreeToolsHub","url":"https://zaintechmart.github.io/FreeToolsHub/word-counter.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+<header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
+<section class="hero"><p class="badge">Free text tool</p><h1>Word Counter</h1><p>Count words and characters as you type.</p><div class="toolbox"><label for="t">Your text</label><textarea id="t" rows="10" placeholder="Type or paste text"></textarea><div class="tool-actions"><button type="button" class="secondary" onclick="resetTool()">Reset</button><button type="button" class="secondary" onclick="copyText()">Copy Text</button></div><p id="out" class="result" aria-live="polite">Words: 0 | Characters: 0</p></div></section><section class="tool-info">
+<h2>About Word Counter</h2>
+<p>Count words and characters while you type or paste text.</p>
+<h2>How to use</h2>
+<p>Type or paste text into the box. The counters update automatically.</p>
+<h2>How it works</h2>
+<p>Words are counted as non-whitespace sequences; characters include spaces and punctuation.</p>
+<p><a href="case-converter.html">Try Case Converter</a> · <a href="index.html">View all FreeToolsHub tools</a></p>
+</section>
+<footer>© 2026 FreeToolsHub · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer>
+<script>t.addEventListener('input',update);function update(){const s=t.value;out.textContent='Words: '+(s.trim().match(/\S+/g)||[]).length+' | Characters: '+s.length}function resetTool(){t.value='';update()}async function copyText(){try{await navigator.clipboard.writeText(t.value);out.textContent='Text copied. Words: '+(t.value.trim().match(/\S+/g)||[]).length+' | Characters: '+t.value.length}catch(e){out.textContent='Copy failed.'}}update()</script>
+</body>
+</html>

@@ -1,15 +1,5 @@
-# FreeToolsHub – Production-Ready Build
+FreeToolsHub – 18 enhanced tool pages
 
-Includes 18 tools, responsive styling, SEO metadata, sitemap.xml, robots.txt, favicon, 404 page, About, Contact, Privacy Policy, Terms and Disclaimer pages, plus an upgraded Percentage Calculator.
+These files improve the existing tool pages with unique SEO metadata, canonical/OG tags, accessible labels, helpful explanatory content, related-tool links, validation/reset/copy features where appropriate, and lightweight WebApplication structured data.
 
-## GitHub Pages
-1. Upload/replace all files in the repository root.
-2. Commit to `main`.
-3. Repository → Settings → Pages → Deploy from branch → `main` → `/ (root)`.
-4. Open the GitHub Pages URL.
-
-## Before AdSense
-Replace the placeholder contact information with a real support email/contact method and review the legal pages for your actual services, analytics and advertising setup. Do not place ads until your site and account meet the applicable advertising policies.
-
-## QR tool
-The QR generator uses an external QR image service, so it needs an internet connection.
+Replace only the matching root-level tool HTML files and style.css in your existing repository. Keep your existing app.js, legal pages, robots.txt, sitemap.xml, favicon.svg, and 404.html. Test each page after upload. This package does not guarantee AdSense approval; Google evaluates the live site and account against its policies.

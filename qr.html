@@ -1,1 +1,33 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QR Code Generator | FreeToolsHub</title><meta name="robots" content="index,follow"><meta name="description" content="Create a QR code from text or a URL."><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css"></head><body><header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a></header><main><section class="hero"><h1>QR Code Generator</h1><p>Create a QR code from text or a URL.</p><div class="toolbox"><input id="t" placeholder="Text or URL"><button onclick="go()">Create QR</button><div id="qr"></div></div></section></main><footer>© 2026 FreeToolsHub · <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer><script>function go(){qr.innerHTML="<img alt=QR src=\"https://api.qrserver.com/v1/create-qr-code/?size=220x220&data="+encodeURIComponent(t.value)+"\">"}</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QR Code Generator | FreeToolsHub</title>
+<meta name="description" content="Create a QR code from text or a URL with a free online QR generator.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zaintechmart.github.io/FreeToolsHub/qr.html">
+<meta property="og:title" content="QR Code Generator | FreeToolsHub">
+<meta property="og:description" content="Create a QR code from text or a URL with a free online QR generator.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zaintechmart.github.io/FreeToolsHub/qr.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"QR Code Generator - FreeToolsHub","url":"https://zaintechmart.github.io/FreeToolsHub/qr.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+<header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
+<section class="hero"><p class="badge">Free generator</p><h1>QR Code Generator</h1><p>Create a QR code from text or a URL.</p><div class="toolbox"><label for="t">Text or URL</label><input id="t" placeholder="https://example.com"><div class="tool-actions"><button onclick="go()">Create QR</button><button type="button" class="secondary" onclick="resetTool()">Reset</button></div><div id="qr" class="qr-result" aria-live="polite"></div></div></section><section class="tool-info">
+<h2>About QR Code Generator</h2>
+<p>Generate a QR code for a URL, short message, or other text.</p>
+<h2>How to use</h2>
+<p>Enter the text or URL and select Create QR.</p>
+<h2>How it works</h2>
+<p>The QR image is generated through the external QR image service used by this page.</p>
+<p><a href="password.html">Try Password Generator</a> · <a href="index.html">View all FreeToolsHub tools</a></p>
+</section>
+<footer>© 2026 FreeToolsHub · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer>
+<script>function go(){const v=t.value.trim();if(!v){qr.textContent='Please enter text or a URL.';return}qr.innerHTML='<img width="220" height="220" loading="lazy" alt="Generated QR code" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data='+encodeURIComponent(v)+'">'}function resetTool(){t.value='';qr.innerHTML=''}</script>
+</body>
+</html>

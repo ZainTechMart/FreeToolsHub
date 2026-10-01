@@ -1,1 +1,33 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>URL Encoder / Decoder | FreeToolsHub</title><meta name="robots" content="index,follow"><meta name="description" content="Encode or decode URL text."><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css"></head><body><header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a></header><main><section class="hero"><h1>URL Encoder / Decoder</h1><p>Encode or decode URL text.</p><div class="toolbox"><textarea id="t" rows="8"></textarea><button onclick="t.value=encodeURIComponent(t.value)">Encode</button><button onclick="t.value=decodeURIComponent(t.value)">Decode</button></div></section></main><footer>© 2026 FreeToolsHub · <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer><script></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>URL Encoder / Decoder | FreeToolsHub</title>
+<meta name="description" content="Encode or decode URL components with a free browser-based URL utility.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zaintechmart.github.io/FreeToolsHub/url.html">
+<meta property="og:title" content="URL Encoder / Decoder | FreeToolsHub">
+<meta property="og:description" content="Encode or decode URL components with a free browser-based URL utility.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zaintechmart.github.io/FreeToolsHub/url.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"URL Encoder / Decoder - FreeToolsHub","url":"https://zaintechmart.github.io/FreeToolsHub/url.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+<header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
+<section class="hero"><p class="badge">Developer tool</p><h1>URL Encoder / Decoder</h1><p>Encode or decode URL components quickly.</p><div class="toolbox"><label for="t">URL text</label><textarea id="t" rows="8" placeholder="Enter URL text"></textarea><div class="tool-actions"><button onclick="encodeText()">Encode</button><button onclick="decodeText()">Decode</button><button type="button" class="secondary" onclick="resetTool()">Reset</button><button type="button" class="secondary" onclick="copyText()">Copy</button></div><p id="out" class="result" aria-live="polite"></p></div></section><section class="tool-info">
+<h2>About URL Encoder / Decoder</h2>
+<p>Safely encode special characters for URLs or decode an encoded URL component.</p>
+<h2>How to use</h2>
+<p>Enter text and select Encode or Decode.</p>
+<h2>How it works</h2>
+<p>The browser uses encodeURIComponent and decodeURIComponent for URL components.</p>
+<p><a href="slug.html">Try Slug Generator</a> · <a href="index.html">View all FreeToolsHub tools</a></p>
+</section>
+<footer>© 2026 FreeToolsHub · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer>
+<script>function encodeText(){try{t.value=encodeURIComponent(t.value);out.textContent='Encoded successfully.'}catch(e){out.textContent='Encoding failed.'}}function decodeText(){try{t.value=decodeURIComponent(t.value);out.textContent='Decoded successfully.'}catch(e){out.textContent='Invalid encoded URL component.'}}function resetTool(){t.value='';out.textContent=''}async function copyText(){try{await navigator.clipboard.writeText(t.value);out.textContent='Copied.'}catch(e){out.textContent='Copy failed.'}}</script>
+</body>
+</html>
