@@ -1,33 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BMI Calculator | FreeToolsHub</title>
-<meta name="description" content="Calculate body mass index (BMI) from weight and height using a simple browser-based calculator.">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://zaintechmart.github.io/FreeToolsHub/bmi.html">
-<meta property="og:title" content="BMI Calculator | FreeToolsHub">
-<meta property="og:description" content="Calculate body mass index (BMI) from weight and height using a simple browser-based calculator.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://zaintechmart.github.io/FreeToolsHub/bmi.html">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href="favicon.svg">
-<link rel="stylesheet" href="style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"BMI Calculator - FreeToolsHub","url":"https://zaintechmart.github.io/FreeToolsHub/bmi.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-</head>
-<body>
-<header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
-<section class="hero"><p class="badge">Free online calculator</p><h1>BMI Calculator</h1><p>Estimate body mass index from weight and height.</p><div class="toolbox"><label for="w">Weight (kg)</label><input id="w" type="number" min="0" step="any" placeholder="Example: 70"><label for="h">Height (cm)</label><input id="h" type="number" min="0" step="any" placeholder="Example: 175"><div class="tool-actions"><button onclick="go()">Calculate</button><button type="button" class="secondary" onclick="resetTool()">Reset</button></div><p id="out" class="result" aria-live="polite"></p></div></section><section class="tool-info">
-<h2>About BMI Calculator</h2>
-<p>Estimate BMI from your weight and height. BMI is a general screening measure and is not a medical diagnosis.</p>
-<h2>How to use</h2>
-<p>Enter weight in kilograms and height in centimeters, then select Calculate.</p>
-<h2>How it works</h2>
-<p>BMI is calculated as weight in kilograms divided by height in meters squared.</p>
-<p><a href="age-calculator.html">Try Age Calculator</a> · <a href="index.html">View all FreeToolsHub tools</a></p>
-</section>
-<footer>© 2026 FreeToolsHub · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer>
-<script>function go(){const weight=Number(w.value),height=Number(h.value)/100;if(weight<=0||height<=0){out.textContent='Please enter valid positive values.';return}const x=weight/(height*height);out.textContent='BMI: '+x.toFixed(1)}function resetTool(){w.value='';h.value='';out.textContent=''}</script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BMI Calculator | FreeToolsHub</title><meta name="robots" content="index,follow"><meta name="description" content="Calculate body mass index."><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8987487809822723" crossorigin="anonymous"></script>
+</head><body><header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a></header><main><section class="hero"><h1>BMI Calculator</h1><p>Calculate body mass index.</p><div class="toolbox"><input id="w" type="number" placeholder="Weight (kg)"><input id="h" type="number" placeholder="Height (cm)"><button onclick="go()">Calculate</button><p id="out"></p></div></section></main><footer>© 2026 FreeToolsHub · <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer><script>function go(){let x=+w.value/(+h.value/100)**2;out.textContent="BMI: "+x.toFixed(1)}</script></body></html>

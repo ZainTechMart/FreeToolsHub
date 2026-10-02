@@ -1,33 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Loan Payment Calculator | FreeToolsHub</title>
-<meta name="description" content="Estimate a monthly loan payment from loan amount, annual interest rate, and loan term.">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://zaintechmart.github.io/FreeToolsHub/loan.html">
-<meta property="og:title" content="Loan Payment Calculator | FreeToolsHub">
-<meta property="og:description" content="Estimate a monthly loan payment from loan amount, annual interest rate, and loan term.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://zaintechmart.github.io/FreeToolsHub/loan.html">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href="favicon.svg">
-<link rel="stylesheet" href="style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loan Payment Calculator - FreeToolsHub","url":"https://zaintechmart.github.io/FreeToolsHub/loan.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-</head>
-<body>
-<header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
-<section class="hero"><p class="badge">Free online calculator</p><h1>Loan Payment Calculator</h1><p>Estimate a monthly payment for a fixed-rate loan.</p><div class="toolbox"><label for="amt">Loan amount</label><input id="amt" type="number" min="0" step="any" placeholder="Example: 10000"><label for="rate">Annual interest rate (%)</label><input id="rate" type="number" min="0" step="any" placeholder="Example: 8"><label for="yrs">Loan term (years)</label><input id="yrs" type="number" min="0" step="any" placeholder="Example: 5"><div class="tool-actions"><button onclick="go()">Calculate</button><button type="button" class="secondary" onclick="resetTool()">Reset</button></div><p id="out" class="result" aria-live="polite"></p></div></section><section class="tool-info">
-<h2>About Loan Payment Calculator</h2>
-<p>Estimate monthly payments for a fixed-rate loan. This is an estimate and not a loan offer or financial advice.</p>
-<h2>How to use</h2>
-<p>Enter loan amount, annual interest rate, and term in years.</p>
-<h2>How it works</h2>
-<p>The standard amortizing-loan payment formula is used when an interest rate is entered.</p>
-<p><a href="percentage.html">Try Percentage Calculator</a> · <a href="index.html">View all FreeToolsHub tools</a></p>
-</section>
-<footer>© 2026 FreeToolsHub · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer>
-<script>function go(){const P=Number(amt.value),annual=Number(rate.value),years=Number(yrs.value);if(P<=0||annual<0||years<=0){out.textContent='Please enter valid loan values.';return}const r=annual/1200,n=years*12,m=r?P*r/(1-Math.pow(1+r,-n)):P/n;out.textContent='Estimated monthly payment: '+m.toFixed(2)}function resetTool(){amt.value='';rate.value='';yrs.value='';out.textContent=''}</script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Loan Payment Calculator | FreeToolsHub</title><meta name="robots" content="index,follow"><meta name="description" content="Estimate monthly loan payments."><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8987487809822723" crossorigin="anonymous"></script>
+</head><body><header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a></header><main><section class="hero"><h1>Loan Payment Calculator</h1><p>Estimate monthly loan payments.</p><div class="toolbox"><input id="amt" type="number" placeholder="Loan amount"><input id="rate" type="number" placeholder="Annual interest %"><input id="yrs" type="number" placeholder="Years"><button onclick="go()">Calculate</button><p id="out"></p></div></section></main><footer>© 2026 FreeToolsHub · <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer><script>function go(){let P=+amt.value,r=+rate.value/1200,n=+yrs.value*12,m=r?P*r/(1-(1+r)**-n):P/n;out.textContent="Monthly payment: "+m.toFixed(2)}</script></body></html>

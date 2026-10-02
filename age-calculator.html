@@ -1,33 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Age Calculator | FreeToolsHub</title>
-<meta name="description" content="Calculate age from a date of birth in years, with a simple free browser calculator.">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://zaintechmart.github.io/FreeToolsHub/age-calculator.html">
-<meta property="og:title" content="Age Calculator | FreeToolsHub">
-<meta property="og:description" content="Calculate age from a date of birth in years, with a simple free browser calculator.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://zaintechmart.github.io/FreeToolsHub/age-calculator.html">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href="favicon.svg">
-<link rel="stylesheet" href="style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Age Calculator - FreeToolsHub","url":"https://zaintechmart.github.io/FreeToolsHub/age-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-</head>
-<body>
-<header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
-<section class="hero"><p class="badge">Free online calculator</p><h1>Age Calculator</h1><p>Calculate your age from your date of birth.</p><div class="toolbox"><label for="dob">Date of birth</label><input id="dob" type="date"><div class="tool-actions"><button onclick="go()">Calculate</button><button type="button" class="secondary" onclick="resetTool()">Reset</button></div><p id="out" class="result" aria-live="polite"></p></div></section><section class="tool-info">
-<h2>About Age Calculator</h2>
-<p>Calculate your age from your date of birth. This tool uses the date you enter and the current date in your browser.</p>
-<h2>How to use</h2>
-<p>Enter your date of birth and select Calculate.</p>
-<h2>How it works</h2>
-<p>Age is calculated from the difference between the birth date and today.</p>
-<p><a href="percentage.html">Try Percentage Calculator</a> · <a href="index.html">View all FreeToolsHub tools</a></p>
-</section>
-<footer>© 2026 FreeToolsHub · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer>
-<script>function go(){const v=document.getElementById('dob').value;if(!v){out.textContent='Please enter a date of birth.';return}const d=new Date(v+'T00:00:00'),n=new Date();if(d>n){out.textContent='Date of birth cannot be in the future.';return}let a=n.getFullYear()-d.getFullYear();const before=n.getMonth()<d.getMonth()||(n.getMonth()===d.getMonth()&&n.getDate()<d.getDate());if(before)a--;out.textContent='Age: '+a+' years'}function resetTool(){dob.value='';out.textContent=''}</script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Age Calculator | FreeToolsHub</title><meta name="robots" content="index,follow"><meta name="description" content="Calculate age from date of birth."><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8987487809822723" crossorigin="anonymous"></script>
+</head><body><header><a class="logo" href="index.html">Free<span>Tools</span>Hub</a></header><main><section class="hero"><h1>Age Calculator</h1><p>Calculate age from date of birth.</p><div class="toolbox"><input id="dob" type="date"><button onclick="go()">Calculate</button><p id="out"></p></div></section></main><footer>© 2026 FreeToolsHub · <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></footer><script>function go(){let d=new Date(dob.value),n=new Date(),a=n.getFullYear()-d.getFullYear();let m=n.getMonth()-d.getMonth();if(m<0||(m===0&&n.getDate()<d.getDate()))a--;out.textContent=isNaN(d)?"Enter a date":"Age: "+a+" years"}</script></body></html>
